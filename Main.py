@@ -1,4 +1,9 @@
-from Functions import Converter
+from Functions import NuggetConverter, IngutsConverter, Roll
 
-C = Converter()
-print("\n{} NUGGETS" .format(C))
+NC = NuggetConverter()
+print("NUGGETS:", NC)
+ICinput = int(input("\nNUGGETS: "))
+IC = IngutsConverter(ICinput)
+print(IC)
+roll = Roll()
+print("Roll: {}" .format(roll))

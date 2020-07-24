@@ -1,25 +1,23 @@
 Players = {
   1: {
-    'Owner1':[],
-    'Balance1':[405],
-    'Propety1':[],
+    'Owner':[],
+    'Propety':[],
   },
 
   2: {
-    'Owner2':[],
-    'Balance2':[405],
-    'Propety2':[],
+    'Owner':[],
+    'Propety':[],
   },
 
   3: {
-    'Owner3':[],
-    'Balance3':[405],
-    'Propety3':[],
+    'Owner':[],
+    'Propety':[],
   },
 
   4: {
-    'Owner4':[],
-    'Balance4':[405],
-    'Propety4':[],
+    'Owner':[],
+    'Propety':[],
   }
 }
+
+Balance = [405, 405, 405, 405]
