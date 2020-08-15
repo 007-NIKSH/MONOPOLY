@@ -1,8 +1,6 @@
 import random
 
-def NuggetConverter():
-    inguts = int(input("INGUTS: "))
-    nuggets = int(input("NUGGETS: "))  
+def NuggetConverter(inguts, nuggets): 
     return ((inguts*9) + nuggets)
 
 def IngutsConverter(Nuggets):
@@ -10,11 +8,11 @@ def IngutsConverter(Nuggets):
     nuggets = Nuggets % 9
     return [inguts, nuggets]
 
-def bal(Balance):
-    Balance = print("HI")
-    return
-
 def Roll():
     Roll_1 = random.randint(1, 6)
     Roll_2 = random.randint(1, 6)
     return (Roll_1 + Roll_2)
+
+def Upper(text):
+    Text = text.upper()
+    return Text
