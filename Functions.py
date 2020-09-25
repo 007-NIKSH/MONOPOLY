@@ -6,7 +6,7 @@ def NuggetConverter(inguts, nuggets):
 def IngutsConverter(Nuggets):
     inguts = Nuggets // 9
     nuggets = Nuggets % 9
-    return [inguts, nuggets]
+    return inguts, nuggets
 
 def Roll():
     Roll_1 = random.randint(1, 6)

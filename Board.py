@@ -2,7 +2,7 @@ from Properties import Property
 import Colours
 import Players
 import random
-import Functions
+from Functions import IngutsConverter
 
 All_Properties = ['Go', 'Motor Drive', 'Gardget Wharf', 'Speed Breaker', 'Surfers Cove', 'Chance', 'Aqua Park', 'Lake Side Marina', 'Rail Way', 'Castle View', 'Just Visiting (or) Jail', 'Dream Avenue', 'Palace Gardens', 'Community Chest', 'Adventure Park', 'Theme Park City', 'Movie District', 'Ender Pearl', 'Style Square', 'Air Way', 'Party Plaza', 'Show Time Boulevard', 'Chance', 'Sunshine Bay', 'Bling Beach', 'Water Way', 'Yatch Harbour', 'Go To The End', 'Tree Top Retreat', 'Ski Mountain', 'Diamond Hill', 'Fortune Valley', 'Over Speeding', 'Paradise Island']
 
@@ -10,13 +10,18 @@ Properties = ['Motor Drive', 'Gardget Wharf', 'Surfers Cove', 'Aqua Park', 'Lake
 Colour = ['Brown', 'Brown', 'Light Blue', 'Light Blue', 'Light Blue', 'White', 'Pink', 'Pink', 'Pink', 'Orange', 'Orange', 'Orange', 'Red', 'White', 'Red', 'Red', 'Yellow', 'Yellow', 'White', 'Yellow', 'Green', 'Green', 'Green', 'Dark Blue', 'dark Blue']
 Cost = [8, 11, 18, 23, 27, 36, 45, 50, 54, 63, 68, 72, 81, 36, 86, 90, 99, 104, 36, 108, 117, 122, 126, 144, 162]
 
+Board = []
+
 def Create_Board(Board):
-    x = 0
-    for x in range((len(Properties) - 1)):
-        Board.append(Property(Properties[x], Colour[x], False, Cost[x], 0))
-        # print(f'{x + 1}: {Board[x].Name} \t\t\t | {Board[x].Colour} \t\t | {Board[x].Cost}')
-        x += 1
-        
+  x = 0
+  for x in range(len(Properties)):
+      Board.append(Property(Name = Properties[x], Colour = Colour[x], Owned = False, Cost = Cost[x], House = 0))
+      C = IngutsConverter(Board[x].Cost)
+      print(f'{x + 1}: {Board[x].Name} \t\t\t | {Board[x].Colour} \t\t | {C}')
+      x += 1
+    
+Create_Board(Board)
+
 def Go(player_Name):
     player_Name.Balance = player_Name.Balance + 45
     return player_Name.Balance
