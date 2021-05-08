@@ -10,17 +10,13 @@ Properties = ['Motor Drive', 'Gardget Wharf', 'Surfers Cove', 'Aqua Park', 'Lake
 Colour = ['Brown', 'Brown', 'Light Blue', 'Light Blue', 'Light Blue', 'White', 'Pink', 'Pink', 'Pink', 'Orange', 'Orange', 'Orange', 'Red', 'White', 'Red', 'Red', 'Yellow', 'Yellow', 'White', 'Yellow', 'Green', 'Green', 'Green', 'Dark Blue', 'dark Blue']
 Cost = [8, 11, 18, 23, 27, 36, 45, 50, 54, 63, 68, 72, 81, 36, 86, 90, 99, 104, 36, 108, 117, 122, 126, 144, 162]
 
-Board = []
-
 def Create_Board(Board):
   x = 0
   for x in range(len(Properties)):
       Board.append(Property(Name = Properties[x], Colour = Colour[x], Owned = False, Cost = Cost[x], House = 0))
       C = IngutsConverter(Board[x].Cost)
-      print(f'{x + 1}: {Board[x].Name} \t\t\t | {Board[x].Colour} \t\t | {C}')
+      # print(f'{x + 1}: {Board[x].Name} \t\t\t | {Board[x].Colour} \t\t | {C[0]}, {C[1]}')
       x += 1
-    
-Create_Board(Board)
 
 def Go(player_Name):
     player_Name.Balance = player_Name.Balance + 45
