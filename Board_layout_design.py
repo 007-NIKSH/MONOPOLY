@@ -142,4 +142,4 @@ def Board_Display():
 
     Board_Layout.mainloop()
 
-Board_Display()
+# Board_Display()
