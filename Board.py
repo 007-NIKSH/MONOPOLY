@@ -1,6 +1,4 @@
 from Properties import Property
-import Colours
-import Players
 import random
 from Functions import IngutsConverter
 

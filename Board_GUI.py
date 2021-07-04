@@ -1,6 +1,7 @@
 from Players import *
 from tkinter import *
-from Board_layout_design import *
+from board_layout import *
+from Functions import IngutsConverter
 from tkinter import messagebox
 
 def Start_Screen():
@@ -19,7 +20,11 @@ def Start_Screen():
         for i in range(4):
             Name = player[i].get()
             if Name != "":
-                players_playing.append(Name)
+                if Name not in players_playing:
+                    players_playing.append(Name)
+                
+                else:
+                    messagebox.showinfo("ERROR", "PLAYER ALREADY EXISTING")
         
         if len(players_playing) > 1:
             Creat_Players(players_playing, players)
@@ -27,13 +32,15 @@ def Start_Screen():
 
             print("--------------------")
             for i in range(0, len(players)):
-                print(players[i].Name)
-                print(players[i].Balance)
-                print(players[i].Position)
-                print(players[i].Turn)
+                print("Name:-", players[i].Name)
+                Bal = players[i].Balance
+                Balance = IngutsConverter(Bal)
+                print("Balance:-", Balance[0], "Ingots", Balance[1], "Nuggets")
+                print("Position:-", players[i].Position)
+                print("Turn:-", players[i].Turn)
                 print("--------------------")
 
-            Board_Display()
+            Board()
 
         else:
             messagebox.showinfo("ERROR", "REQUIRES 2 - 4 PLAYERS")
@@ -70,4 +77,4 @@ def Start_Screen():
 
     start_screen.mainloop()
 
-# Start_Screen()
+Start_Screen()
